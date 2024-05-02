@@ -7,6 +7,6 @@
   <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
       <TextBlock Text="Welcome to VolunteerNotes!" HorizontalAlignment="Center"/>
       <Button HorizontalAlignment="Center" Margin="0,20,0,0" x:CompileBindings="False" Command="{Binding $parent[Window].DataContext.ViewNotes}">View Notes</Button>
-      <Button HorizontalAlignment="Center" Margin="0,20,0,0">Submit Notes</Button>
+      <Button HorizontalAlignment="Center" Margin="0,20,0,0" x:CompileBindings="False" Command="{Binding $parent[Window].DataContext.SubmitNotes}">Submit Notes</Button>
   </StackPanel>
 </UserControl>

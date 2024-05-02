@@ -22,4 +22,14 @@ public class MainWindowViewModel : ViewModelBase
     {
         ContentViewModel = new NotesViewModel();
     }
+
+    public void SubmitNotes()
+    {
+        ContentViewModel = new SubmitViewModel();
+    }
+
+    public void Home()
+    {
+        ContentViewModel = new HomeViewModel();
+    }
 }
