@@ -1,8 +1,25 @@
-﻿namespace VolunteerNotesApp.ViewModels;
+﻿using ReactiveUI;
+namespace VolunteerNotesApp.ViewModels;
 
 public class MainWindowViewModel : ViewModelBase
 {
-#pragma warning disable CA1822 // Mark members as static
-    public string Greeting => "Welcome to VolunteerNotes!";
-#pragma warning restore CA1822 // Mark members as static
+    private ViewModelBase _contentViewModel;
+
+    //this has a dependency on the ToDoListService
+
+    public MainWindowViewModel()
+    {
+        _contentViewModel = new HomeViewModel();
+    }
+    
+    public ViewModelBase ContentViewModel
+    {
+        get => _contentViewModel;
+        private set => this.RaiseAndSetIfChanged(ref _contentViewModel, value);
+    }
+
+    public void ViewNotes()
+    {
+        ContentViewModel = new NotesViewModel();
+    }
 }
